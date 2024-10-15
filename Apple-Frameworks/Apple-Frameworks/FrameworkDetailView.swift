@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FrameworkDetailView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var isShowingWebView: Bool = false
     
     var framework: Framework
     
@@ -38,10 +39,13 @@ struct FrameworkDetailView: View {
             Spacer()
             
             Button {
-               // more code to come
+                isShowingWebView = true
             } label: {
                 FrameworkButtonView(title: "Learn More")
             }
+        }
+        .fullScreenCover(isPresented: $isShowingWebView) {
+            WebView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
         }
     }
 }
