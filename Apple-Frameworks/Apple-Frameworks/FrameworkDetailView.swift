@@ -25,13 +25,7 @@ struct FrameworkDetailView: View {
             Button {
                // more code to come
             } label: {
-                Text("Learn More")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .frame(width: 280, height: 50)
-                    .background(.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                FrameworkButtonView(title: "Learn More")
             }
         }
     }
