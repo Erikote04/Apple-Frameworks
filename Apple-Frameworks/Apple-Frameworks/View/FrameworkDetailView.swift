@@ -11,10 +11,13 @@ struct FrameworkDetailView: View {
     @State private var isShowingSheet: Bool = false
     
     var framework: Framework
+    var isShowingCloseButton: Bool
     
     var body: some View {
         VStack {
-            DismissButton()
+            if isShowingCloseButton {
+                DismissButton()
+            }
             
             Spacer()
             
@@ -39,5 +42,5 @@ struct FrameworkDetailView: View {
 }
 
 #Preview {
-    FrameworkDetailView(framework: MockData.sampleFramework)
+    FrameworkDetailView(framework: MockData.sampleFramework, isShowingCloseButton: false)
 }
