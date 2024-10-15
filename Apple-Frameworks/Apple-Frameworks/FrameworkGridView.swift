@@ -14,17 +14,13 @@ struct FrameworkGridView: View {
         GridItem(.flexible()),
     ]
     
+    let frameworks = MockData.frameworks
+    
     var body: some View {
         LazyVGrid(columns: columns) {
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
-            FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
+            ForEach(frameworks) { framework in
+                FrameworkGridCellView(framework: framework)
+            }
         }
     }
 }

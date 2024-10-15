@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct FrameworkGridCellView: View {
-    let name: String
-    let imageName: String
+    let framework: Framework
     
     var body: some View {
         VStack {
-            Image(imageName)
+            Image(framework.imageName)
                 .resizable()
                 .frame(width: 90, height: 90)
             
-            Text(name)
+            Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit()
@@ -27,5 +26,11 @@ struct FrameworkGridCellView: View {
 }
 
 #Preview {
-    FrameworkGridCellView(name: "App Clips", imageName: "app-clip")
+    FrameworkGridCellView(
+        framework: Framework(
+            name: "App Clips",
+            imageName: "app-clip",
+            urlString: "",
+            description: "")
+    )
 }
