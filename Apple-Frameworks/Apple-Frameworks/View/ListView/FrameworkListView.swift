@@ -15,7 +15,7 @@ struct FrameworkListView: View {
             List {
                 ForEach(viewModel.frameworks) { framework in
                     NavigationLink {
-                        FrameworkDetailView(framework: framework, isShowingCloseButton: false)
+                        FrameworkDetailView(framework: framework)
                     } label: {
                         FrameworkListRowView(framework: framework)
                     }

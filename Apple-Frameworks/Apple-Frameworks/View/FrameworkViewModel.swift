@@ -8,8 +8,6 @@
 import SwiftUI
 
 final class FrameworkViewModel: ObservableObject {
-    @Published var isShowingDetailView: Bool = false
-    
     let frameworks = MockData.frameworks
     
     let columns: [GridItem] = [
@@ -17,7 +15,4 @@ final class FrameworkViewModel: ObservableObject {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    var selectedFramework: Framework? {
-        didSet { isShowingDetailView = true }
-    }
 }

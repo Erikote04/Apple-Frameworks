@@ -23,6 +23,9 @@ struct FrameworkTabView: View {
                 }
         }
         .tint(Color(.label))
+        .onAppear {
+            UITabBar.appearance().backgroundColor = .secondarySystemBackground
+        }
     }
 }
 

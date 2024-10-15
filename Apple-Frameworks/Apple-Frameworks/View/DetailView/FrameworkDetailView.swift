@@ -11,14 +11,9 @@ struct FrameworkDetailView: View {
     @State private var isShowingSheet: Bool = false
     
     var framework: Framework
-    var isShowingCloseButton: Bool
     
     var body: some View {
         VStack {
-            if isShowingCloseButton {
-                DismissButton()
-            }
-            
             Spacer()
             
             FrameworkGridCellView(framework: framework)
@@ -29,10 +24,8 @@ struct FrameworkDetailView: View {
             
             Spacer()
             
-            Button {
+            CustomButton(title: "Learn More", systemImage: "book.fill") {
                 isShowingSheet = true
-            } label: {
-                CustomButton(title: "Learn More")
             }
         }
         .fullScreenCover(isPresented: $isShowingSheet) {
@@ -42,5 +35,5 @@ struct FrameworkDetailView: View {
 }
 
 #Preview {
-    FrameworkDetailView(framework: MockData.sampleFramework, isShowingCloseButton: false)
+    FrameworkDetailView(framework: MockData.sampleFramework)
 }
