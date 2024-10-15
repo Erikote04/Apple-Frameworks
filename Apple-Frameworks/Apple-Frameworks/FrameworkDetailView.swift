@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct FrameworkDetailView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var framework: Framework
     
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .foregroundStyle(Color(.label))
+                        .imageScale(.large)
+                        .frame(width: 44, height: 44)
+                }
+            }
+            
             Spacer()
             
             FrameworkGridCellView(framework: framework)
