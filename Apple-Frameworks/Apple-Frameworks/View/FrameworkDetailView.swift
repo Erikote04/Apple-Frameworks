@@ -8,25 +8,13 @@
 import SwiftUI
 
 struct FrameworkDetailView: View {
-    @Environment(\.dismiss) var dismiss
-    @State private var isShowingWebView: Bool = false
+    @State private var isShowingSheet: Bool = false
     
     var framework: Framework
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                        .foregroundStyle(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-            }
+            DismissButton()
             
             Spacer()
             
@@ -39,12 +27,12 @@ struct FrameworkDetailView: View {
             Spacer()
             
             Button {
-                isShowingWebView = true
+                isShowingSheet = true
             } label: {
-                FrameworkButtonView(title: "Learn More")
+                CustomButton(title: "Learn More")
             }
         }
-        .fullScreenCover(isPresented: $isShowingWebView) {
+        .fullScreenCover(isPresented: $isShowingSheet) {
             WebView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
         }
     }

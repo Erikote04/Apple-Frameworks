@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FrameworkButtonView: View {
+struct CustomButton: View {
     var title: String
     
     var body: some View {
@@ -22,5 +22,5 @@ struct FrameworkButtonView: View {
 }
 
 #Preview {
-    FrameworkButtonView(title: "Learn More")
+    CustomButton(title: "Learn More")
 }
