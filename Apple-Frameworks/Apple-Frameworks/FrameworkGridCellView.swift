@@ -27,11 +27,5 @@ struct FrameworkGridCellView: View {
 }
 
 #Preview {
-    FrameworkGridCellView(
-        framework: Framework(
-            name: "App Clips",
-            imageName: "app-clip",
-            urlString: "",
-            description: "")
-    )
+    FrameworkGridCellView(framework: MockData.sampleFramework)
 }
